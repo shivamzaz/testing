@@ -16,6 +16,9 @@ class NoteController extends Controller
     public function index()
     {
         //
+        return response()->json(
+            Note::where('user_id',Auth::guard('api')->id())->get()
+            );
     }
 
     /**
